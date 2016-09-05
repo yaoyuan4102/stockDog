@@ -4,6 +4,24 @@
     </div>
 
     <div class="col-md-9">
-
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <span class="glyphicon plyphicon-list"></span>
+                {{ watchlist.description }}
+                <button class="btn btn-success btn-xs pull-right" type="button"
+                        ng-click="showStockModal()">
+                    <span class="glyphicon glyphicon-plus"></span>
+                </button>
+            </div>
+            <div class="panel-body table-responsive">
+                <div ng-hide="stocks.length" class="jumbotron">
+                    <hi>Woof.</hi>
+                    <p>Looks like you haven't added any stocks to this watchlist yet!</p>
+                    <p>Do so now by clicking the
+                        <span class="glyphicon glyphicon-plus"></span> located above.</p>
+                </div>
+                <p ng-repeat="stock in stocks">{{ stock.company.symbol }}</p>
+            </div>
+        </div>
     </div>
 </div>

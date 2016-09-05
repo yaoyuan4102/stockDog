@@ -14,9 +14,9 @@ angular.module('stockDogApp')
     $scope.$watch(function () {
         return $location.path();
     }, function (path) {
-        if (_.contains(path, 'watchlist')) {
+        if (_.includes(path, 'watchlist')) {
             $scope.activeView = 'watchlist';
-        } else if (_.contains(path, 'dashboard')) {
+        } else if (_.includes(path, 'dashboard')) {
             $scope.activeView = 'dashboard';
         }
     })
